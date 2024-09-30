@@ -17,6 +17,7 @@ const Footer = () => {
   const CustomContainer = styled(Box)(({ theme }) => ({
     display: "flex",
     padding: "30px",
+    backgroundColor: "#f9f587",
     justifyContent: "space-around",
     gap: theme.spacing(5),
     [theme.breakpoints.down("sm")]: {

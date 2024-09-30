@@ -22,7 +22,7 @@ const CustomButton = ({
     justifyContent: "center",
     borderRadius: "7px",
     border: "2px solid transparent",
-     "&:hover": {
+    "&:hover": {
       backgroundColor: color,
       color: backgroundColor,
       borderColor: backgroundColor,
