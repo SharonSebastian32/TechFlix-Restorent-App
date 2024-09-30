@@ -14,6 +14,7 @@ import ShareIcon from "@mui/icons-material/Share";
 
 const StyledCard = styled(Card)(({ theme }) => ({
   maxWidth: 250,
+   
   backgroundColor: "#fffbe2",
   margin: theme.spacing(2),
   transition: "all 0.3s ease-in-out",

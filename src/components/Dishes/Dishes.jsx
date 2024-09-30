@@ -32,7 +32,11 @@ const Dishes = () => {
         }}
       >
         <Container>
-          <PropertiesTextBox>
+          <PropertiesTextBox
+            sx={{
+              marginTop: "25px",
+            }}
+          >
             <Typography
               sx={{
                 color: "#000339",

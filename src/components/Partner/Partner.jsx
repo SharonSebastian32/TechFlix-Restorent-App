@@ -20,13 +20,13 @@ const Partner = () => {
   const CostumBox = styled(Box)(({ theme }) => ({
     marginTop: 2,
     [theme.breakpoints.down("md")]: {
-      marginBottom: theme.spacing(4),
+      marginBottom: theme.spacing(5),
     },
   }));
 
   return (
     <>
-      <Box sx={{ mt: "10" }}>
+      <Box sx={{ mt: "0" }}>
         <CustomContainer>
           <CostumBox>
             <img src={logo} alt="Logo" />
@@ -58,7 +58,7 @@ const Partner = () => {
           </Box>
         </CustomContainer>
         <Container sx={{ display: "flex", flexDirection: "column" }}>
-          <img src={partners} alt="" />
+          <img src={partners} alt="OurPartners" data-aos="flip-up" />
         </Container>
       </Box>
     </>

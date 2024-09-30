@@ -76,7 +76,7 @@ const Welcome = () => {
           <Box sx={{ flex: "1.25" }}>
             <img
               data-aos="zoom-in"
-              data-aos-duration="2000"
+              data-aos-duration="1000"
               src={WelcomeImg}
               alt="Welcome"
               style={{ maxWidth: "100%", marginBottom: "2rem" }}

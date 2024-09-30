@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import {
   Box,
   styled,
@@ -18,6 +19,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import ContactsIcon from "@mui/icons-material/Contacts";
 import CustomeButton from "../CustomeButton/CustomButton";
 import logo from "../../Assets/logo.png";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [mobileMenu, setMobileMenu] = useState({ left: false });
@@ -91,6 +93,8 @@ const Header = () => {
     },
   }));
 
+  const navigate = useNavigate();
+
   const list = (anchor) => (
     <Box
       sx={{ width: 300 }}
@@ -112,68 +116,78 @@ const Header = () => {
   );
 
   return (
-    <Paper elevation={0} sx={{ position: "sticky", top: 0, zIndex: 1100 }}>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "25px",
-          maxWidth: "auto",
-          backgroundColor: "#fed801",
-          marginLeft: "0px",
-          marginBottom: "-24px",
-        }}
+    <>
+      {" "}
+      <Paper
+        elevation={0}
+        sx={{ position: "sticky", top: 0,  zIndex: 1100 }}
       >
         <Box
           sx={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
-            gap: "2.5rem",
+            justifyContent: "space-between",
+            padding: "25px",
+            maxWidth: "auto",
+            backgroundColor: "#fed801",
+            marginLeft: "0px",
+            marginBottom: "-24px",
           }}
         >
           <Box
             sx={{
               display: "flex",
               alignItems: "center",
+              justifyContent: "center",
+              gap: "2.5rem",
             }}
           >
-            <CustomMenuIcon onClick={toggleDrawer("left", true)} />
-            <NavbarLogo src={logo} alt="logo" />
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <CustomMenuIcon onClick={toggleDrawer("left", true)} />
+              <NavbarLogo src={logo} alt="logo" />
+            </Box>
+            <NavbarLinksBox>
+              {nav_titles.map((item, index) => (
+                <NavbarLink
+                  variant="body2"
+                  key={index}
+                  onClick={() => navigate(item.path)}
+                >
+                  {item.display}
+                </NavbarLink>
+              ))}
+            </NavbarLinksBox>
           </Box>
-          <NavbarLinksBox>
-            {nav_titles.map((item, index) => (
-              <NavbarLink variant="body2" key={index}>
-                {item.display}
-              </NavbarLink>
-            ))}
-          </NavbarLinksBox>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "1rem",
+            }}
+          >
+            <NavbarLink variant="body2">Sign Up</NavbarLink>
+            <CustomeButton
+              backgroundColor="#0F1B4C"
+              buttonText="Register"
+              color="white"
+            />
+          </Box>
         </Box>
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "1rem",
-          }}
+        <Drawer
+          anchor="left"
+          open={mobileMenu.left}
+          onClose={toggleDrawer("left", false)}
         >
-          <NavbarLink variant="body2">Sign Up</NavbarLink>
-          <CustomeButton
-            backgroundColor="#0F1B4C"
-            buttonText="Register"
-            color="white"
-          />
-        </Box>
-      </Box>
-      <Drawer
-        anchor="left"
-        open={mobileMenu.left}
-        onClose={toggleDrawer("left", false)}
-      >
-        {list("left")}
-      </Drawer>
-    </Paper>
+          {list("left")}
+        </Drawer>
+      </Paper>
+    </>
   );
 };
 
