@@ -16,7 +16,6 @@ const Partner = () => {
       marginBottom: theme.spacing(4),
     },
   }));
-  const CostumBox1 = styled(Box)(({ theme }) => ({}));
 
   const CostumBox = styled(Box)(({ theme }) => ({
     marginTop: 2,
