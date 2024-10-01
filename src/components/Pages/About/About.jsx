@@ -5,7 +5,7 @@ const About = () => {
   const CustomBox = styled(Box)(({ theme }) => ({
     width: "70%",
     height: "50%",
-     [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("md")]: {
       width: "85%",
     },
   }));
@@ -30,6 +30,9 @@ const About = () => {
           margin: "0 auto",
         }}
       />
+      <br />
+      <br />
+      <br />
       <Typography
         sx={{
           fontSize: "35px",
@@ -37,7 +40,7 @@ const About = () => {
           color: "#000339",
           textAlign: "center",
           mt: 2,
-          mb: 4,
+          mb: 2,
         }}
       >
         About Us
@@ -46,22 +49,20 @@ const About = () => {
         <Typography
           variant="body2"
           sx={{
-            fontSize: "16px",
-            fontWeight: "500",
+            fontSize: "20px",
+            fontWeight: "600",
             color: "#5A6473",
             textAlign: "center",
+            lineHeight: "25px",
           }}
         >
           Welcome to our restaurant, where culinary excellence meets warm
-          hospitality
+          hospitality{" "}
         </Typography>
         <br />
         <br />
         <br />
-         
-        
-        <br />
-        <br />
+ 
       </CustomBox>
     </Box>
   );

@@ -16,7 +16,7 @@ const Welcome = () => {
   const CustomBox = styled(Box)(({ theme }) => ({
     display: "flex",
     justifyContent: "center",
-    gap: theme.spacing(5),
+    gap: theme.spacing(2),
     marginTop: theme.spacing(3),
     [theme.breakpoints.down("md")]: {
       flexDirection: "column",

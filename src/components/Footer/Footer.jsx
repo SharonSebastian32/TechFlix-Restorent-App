@@ -1,18 +1,10 @@
 import { Box, Typography, styled } from "@mui/material";
-import React, { useEffect } from "react";
-import fbIcon from "../../Assets/facebook.png";
+ import fbIcon from "../../Assets/facebook.png";
 import twitterIcon from "../../Assets/twitter.png";
 import InstaIcon from "../../Assets/instagram.png";
-import AOS from "aos";
-import "aos/dist/aos.css";
-
-const Footer = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: false,
-    });
-  }, []);
+ import "aos/dist/aos.css";
+ const Footer = () => {
+  
 
   const CustomContainer = styled(Box)(({ theme }) => ({
     display: "flex",
